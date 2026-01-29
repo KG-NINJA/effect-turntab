@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アナログレコード風ボイスフィルター</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Basic reset to ensure it looks okay before external CSS is loaded */
+        body { font-family: sans-serif; text-align: center; padding: 20px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>アナログレコード風ボイスフィルター</h1>
+        <p>あなたの声を、ノイズ混じりの夢のような音質に変換します。</p>
+
+        <div class="visualizer-container">
+            <div id="record-indicator" class="record-indicator"></div>
+        </div>
+
+        <div class="controls">
+            <button id="start-btn">マイクをオンにする</button>
+            <button id="stop-btn" disabled>停止</button>
+        </div>
+
+        <p id="status-message">ボタンを押して開始してください</p>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

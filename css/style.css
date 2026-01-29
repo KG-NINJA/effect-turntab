@@ -1,0 +1,116 @@
+body {
+    background-color: #f4ecd8;
+    color: #4a4a4a;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff9e6;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1), 0 0 50px rgba(139, 69, 19, 0.1);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid #d4c5a9;
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: #5d4037;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+}
+
+p {
+    font-size: 0.9rem;
+    color: #795548;
+    margin-bottom: 2rem;
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+button {
+    background-color: #795548;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+button:hover:not(:disabled) {
+    background-color: #5d4037;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+button:disabled {
+    background-color: #d7ccc8;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+#status-message {
+    font-weight: bold;
+    color: #8d6e63;
+}
+
+/* Vinyl Record Animation Indicator */
+.record-indicator {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, #333 30%, #111 31%, #111 50%, #333 51%, #333 60%, #111 61%);
+    border-radius: 50%;
+    margin: 0 auto 2rem;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    border: 2px solid #3e2723;
+}
+
+.record-indicator::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    background-color: #d84315; /* Label color */
+    border-radius: 50%;
+}
+
+.record-indicator::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6px;
+    height: 6px;
+    background-color: #fff; /* Spindle hole */
+    border-radius: 50%;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.record-indicator.spinning {
+    animation: spin 2s linear infinite;
+}
